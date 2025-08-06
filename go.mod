@@ -4,7 +4,13 @@ go 1.24.4
 
 require google.golang.org/grpc v1.74.2
 
-require go.uber.org/multierr v1.10.0 // indirect
+require (
+	github.com/go-playground/locales v0.14.1 // indirect
+	github.com/go-playground/universal-translator v0.18.1 // indirect
+	github.com/go-playground/validator v9.31.0+incompatible // indirect
+	github.com/leodido/go-urn v1.4.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
+)
 
 require (
 	github.com/google/uuid v1.6.0
