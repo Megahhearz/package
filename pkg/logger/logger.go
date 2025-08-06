@@ -14,7 +14,7 @@ type logger struct {
 	logger *zap.Logger
 }
 
-func New(logLevel string) (Logger, error) {
+func New() (Logger, error) {
 	config := zap.Config{
 		Level:            zap.NewAtomicLevelAt(zap.InfoLevel),
 		Encoding:         "json",
