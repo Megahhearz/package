@@ -1,8 +1,6 @@
 package interceptor
 
-import (
-	logger "github.com/Megahhearz/interceptor/pkg"
-)
+import "github.com/Megahhearz/package/pkg/logger"
 
 // GRPCInterceptor представляет собой структуру, содержащую перехватчики (interceptors) для gRPC-сервера.
 // На данный момент в ней хранится только логгер, но в будущем может быть расширена метриками, трассировкой и т.п.
