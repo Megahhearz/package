@@ -12,7 +12,11 @@ import (
 // XRequestIDInterceptor — серверный интерсептор для добавления/валидации x-request-id.
 // При отсутствии ID он будет сгенерирован. Это важно для трассировки и корреляции запросов между сервисами.
 func (i *GRPCInterceptor) XRequestIDInterceptor() grpc.UnaryServerInterceptor {
-	return func(ctx context.Context, req any, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (any, error) {
+	return func(
+		ctx context.Context,
+		req any,
+		info *grpc.UnaryServerInfo,
+		handler grpc.UnaryHandler) (any, error) {
 		// Извлекаем метаданные из входящего контекста
 		md, ok := metadata.FromIncomingContext(ctx)
 		if !ok {

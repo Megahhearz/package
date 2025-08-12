@@ -10,7 +10,12 @@ import (
 
 // LoggerInterceptor — unary-интерсептор, логирующий входящие запросы, их продолжительность и ошибки, если они есть.
 func (i *GRPCInterceptor) LoggerInterceptor() grpc.UnaryServerInterceptor {
-	return func(ctx context.Context, req any, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (any, error) {
+	return func(
+		ctx context.Context,
+		req any,
+		info *grpc.UnaryServerInfo,
+		handler grpc.UnaryHandler) (any, error) {
+
 		start := time.Now() // Засекаем время начала запроса
 
 		// Пытаемся извлечь x-request-id из метаданных gRPC-контекста

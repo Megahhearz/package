@@ -12,7 +12,11 @@ import (
 // Позволяет предотвратить падение сервера, если внутри gRPC-хендлера произойдёт panic.
 // Вместо падения вернётся статус INTERNAL с описанием "внутренняя ошибка сервера".
 func (i *GRPCInterceptor) UnaryPanicRecoveryInterceptor() grpc.UnaryServerInterceptor {
-	return func(ctx context.Context, req any, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp any, err error) {
+	return func(
+		ctx context.Context,
+		req any,
+		info *grpc.UnaryServerInfo,
+		handler grpc.UnaryHandler) (resp any, err error) {
 		// Отложенное восстановление после panic, если она возникнет внутри handler-а
 		defer func() {
 			if r := recover(); r != nil {
