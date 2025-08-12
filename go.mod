@@ -1,4 +1,4 @@
-module github.com/Megahhearz/package
+module github.com/Megahhearz/shared
 
 go 1.24.4
 

@@ -3,7 +3,7 @@ package interceptor
 import (
 	"time"
 
-	"github.com/Megahhearz/package/logger"
+	"github.com/Megahhearz/shared/logger"
 	"github.com/sony/gobreaker"
 )
 
