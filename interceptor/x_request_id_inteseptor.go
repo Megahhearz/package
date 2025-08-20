@@ -28,7 +28,7 @@ func (i *GRPCInterceptor) XRequestIDInterceptor() grpc.UnaryServerInterceptor {
 		if ids := md.Get("x-request-id"); len(ids) > 0 {
 			requestID = ids[0]
 			if _, err := uuid.Parse(requestID); err != nil {
-				slog.Warn("невалидный x-request-id, генерируем новый", "invalid_id", requestID)
+				i.logger.Error("невалидный x-request-id", "генерируем новый", "requestID", err, requestID)
 				requestID = uuid.New().String()
 				md.Set("x-request-id", requestID)
 			}
