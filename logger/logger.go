@@ -6,8 +6,10 @@ import (
 )
 
 type Logger interface {
+	Debug(layer string, method string, msg string, args ...interface{})
 	Info(layer string, method string, msg string, args ...interface{})
 	Error(layer string, method string, msg string, err error, args ...interface{})
+	Warn(layer string, method string, msg string, err error, args ...interface{})
 }
 
 type logger struct {
