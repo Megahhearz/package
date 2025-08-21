@@ -26,3 +26,8 @@ func ToOptionalInt64Proto(value *int64) *int64 {
 func FromOptionalInt64Proto(value *int64) *int64 {
 	return value
 }
+
+// FromStringProto преобразует значение float в указатель на float.
+func FromFloatProto(value float64) *float64 {
+	return &value
+}
